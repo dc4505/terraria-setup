@@ -1,0 +1,17 @@
+version: '2.0'
+
+services:
+  terraria:
+    container_name: terraria
+    image: kaysond/docker-terraria
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+    restart: always
+    stdin_open: true
+    tty: true
+    ports:
+      - 7777:7777
+    volumes:
+      - /home/ubuntu/world:/world
+      - /home/ubuntu/config:/config
